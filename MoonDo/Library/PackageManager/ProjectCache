@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638260303062575435
-    m_Hash: 848660938
+      ticks: 638266391029294527
+    m_Hash: 2030354091
   m_LockFileStatus:
     m_FilePath: C:/git/MoonDo/MoonDo/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638260303987895139
-    m_Hash: 552752024
+      ticks: 638266391029304504
+    m_Hash: 2680633138
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -36,7 +36,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Editor
-  type: 
+  type: assets
   description: The package gives you the ability to use Unity Version Control in
     the Unity editor. To use Unity Version Control, a subscription is required. Learn
     more about how you can get started for free by visiting plasticscm.com.
@@ -104,16 +104,21 @@ m_ResolvedPackages:
     - 2.0.0-preview.21
     - 2.0.0-preview.22
     - 2.0.0
+    - 2.0.1
+    - 2.0.3
+    - 2.0.4
     - 2.0.5
+    - 2.0.7
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     compatible:
     - 2.0.5
+    - 2.0.7
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
-    recommended: 2.0.5
+    recommended: 2.0.7
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -142,7 +147,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 638218079810000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.collab-proxy@2.0/manual/index.html
   hasRepository: 1
   repository:
@@ -290,7 +295,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: assets
   description: The JetBrains Rider Editor package provides an integration for using
     the JetBrains Rider IDE as a code editor for Unity. It adds support for generating
     .csproj files for code completion and auto-discovery of installations.
@@ -332,6 +337,9 @@ m_ResolvedPackages:
     - 3.0.16
     - 3.0.17
     - 3.0.18
+    - 3.0.20
+    - 3.0.21
+    - 3.0.22
     - 3.0.24
     compatible:
     - 3.0.24
@@ -354,7 +362,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 638221653400000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.rider@3.0/manual/index.html
   hasRepository: 1
   repository:
@@ -384,7 +392,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: Code editor integration for supporting Visual Studio as code editor
     for unity. Adds support for generating csproj files for intellisense purposes,
     auto discovery of installations, etc.
@@ -413,9 +421,11 @@ m_ResolvedPackages:
     - 2.0.16
     - 2.0.17
     - 2.0.18
+    - 2.0.20
     compatible:
     - 2.0.18
-    recommended: 2.0.18
+    - 2.0.20
+    recommended: 2.0.20
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -440,7 +450,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 638173205920000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.visualstudio@2.0/manual/index.html
   hasRepository: 1
   repository:
@@ -514,6 +524,10 @@ m_ResolvedPackages:
     - 1.3.1
     - 1.3.2
     - 1.3.3
+    - 1.3.4
+    - 1.3.5
+    - 1.3.7
+    - 1.3.8
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -524,6 +538,10 @@ m_ResolvedPackages:
     - 1.3.1
     - 1.3.2
     - 1.3.3
+    - 1.3.4
+    - 1.3.5
+    - 1.3.7
+    - 1.3.8
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -696,14 +714,18 @@ m_ResolvedPackages:
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
+    - 3.2.0-pre.5
     - 4.0.0-pre.1
+    - 4.0.0-pre.2
     compatible:
     - 3.0.6
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
+    - 3.2.0-pre.5
     - 4.0.0-pre.1
+    - 4.0.0-pre.2
     recommended: 3.0.6
     deprecated: []
   dependencies:
@@ -762,7 +784,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: assets
   description: Use Unity Timeline to create cinematic content, game-play sequences,
     audio sequences, and complex particle effects.
   status: 0
@@ -837,19 +859,27 @@ m_ResolvedPackages:
     - 1.6.2
     - 1.6.3
     - 1.6.4
+    - 1.6.5
     - 1.7.0-pre.1
     - 1.7.0-pre.2
     - 1.7.0
     - 1.7.1
     - 1.7.2
     - 1.7.3
+    - 1.7.4
     - 1.7.5
     - 1.8.0
     - 1.8.1
+    - 1.8.2
+    - 1.8.3
+    - 1.8.4
     compatible:
     - 1.7.5
     - 1.8.0
     - 1.8.1
+    - 1.8.2
+    - 1.8.3
+    - 1.8.4
     recommended: 1.7.5
     deprecated: []
   dependencies:
@@ -886,7 +916,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 638229649600000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.timeline@1.7/manual/index.html
   hasRepository: 1
   repository:
@@ -926,6 +956,8 @@ m_ResolvedPackages:
   versions:
     all:
     - 1.0.0
+    - 3.0.0-exp.1
+    - 3.0.0-exp.3
     compatible:
     - 1.0.0
     recommended: 1.0.0
@@ -2995,10 +3027,14 @@ m_ResolvedPackages:
     - 1.0.6
     - 2.0.2
     - 2.0.3
+    - 2.0.4
+    - 2.0.5
     compatible:
     - 1.0.6
     - 2.0.2
     - 2.0.3
+    - 2.0.4
+    - 2.0.5
     recommended: 1.0.6
     deprecated: []
   dependencies: []
@@ -3047,7 +3083,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 2D
-  type: 
+  type: asset
   description: 2D Animation provides all the necessary tooling and runtime components
     for skeletal animation using Sprites.
   status: 0
@@ -3127,6 +3163,7 @@ m_ResolvedPackages:
     - 5.2.3
     - 5.2.4
     - 5.2.6
+    - 5.2.7
     - 6.0.0-pre.1
     - 6.0.0-pre.2
     - 6.0.1
@@ -3146,6 +3183,8 @@ m_ResolvedPackages:
     - 7.0.7
     - 7.0.8
     - 7.0.9
+    - 7.0.10
+    - 7.0.11
     - 8.0.0-pre.3
     - 8.0.0-pre.4
     - 8.0.0
@@ -3158,9 +3197,13 @@ m_ResolvedPackages:
     - 9.0.0-pre.3
     - 9.0.0
     - 9.0.1
+    - 9.0.2
     - 9.0.3
     - 10.0.0-pre.1
     - 10.0.0-pre.2
+    - 10.0.0
+    - 10.0.1
+    - 10.0.2
     compatible:
     - 9.0.3
     recommended: 9.0.3
@@ -3214,7 +3257,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 638191394980000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.2d.animation@9.0/manual/index.html
   hasRepository: 1
   repository:
@@ -3405,6 +3448,7 @@ m_ResolvedPackages:
     - 8.0.2
     - 9.0.0-pre.1
     - 9.0.0-pre.2
+    - 9.0.0
     compatible:
     - 8.0.2
     recommended: 8.0.2
@@ -3545,7 +3589,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 2D
-  type: 
+  type: asset
   description: SpriteShape Runtime & Editor Package contains the tooling and the
     runtime component that allows you to create very organic looking spline based
     2D worlds. It comes with intuitive configurator and a highly performant renderer.
@@ -3621,6 +3665,7 @@ m_ResolvedPackages:
     - 7.0.4
     - 7.0.5
     - 7.0.6
+    - 7.0.7
     - 8.0.0-pre.4
     - 8.0.0-pre.5
     - 8.0.0
@@ -3631,6 +3676,8 @@ m_ResolvedPackages:
     - 9.0.2
     - 10.0.0-pre.1
     - 10.0.0-pre.2
+    - 10.0.0
+    - 10.0.1
     compatible:
     - 9.0.2
     recommended: 9.0.2
@@ -3680,7 +3727,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 638150103540000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.2d.spriteshape@9.0/manual/index.html
   hasRepository: 1
   repository:
@@ -3783,7 +3830,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 2D
-  type: 
+  type: assets
   description: '2D Tilemap Extras is a package that contains extra scripts for use
     with 2D Tilemap features in Unity. These include custom Tiles and Brushes for
     the Tilemap feature.
@@ -3823,13 +3870,19 @@ m_ResolvedPackages:
     - 2.2.2
     - 2.2.3
     - 2.2.4
+    - 2.2.5
+    - 2.2.6
     - 3.0.0
     - 3.0.1
     - 3.0.2
     - 3.0.3
+    - 3.1.0
     - 3.1.1
     - 4.0.0-pre.1
     - 4.0.0-pre.2
+    - 4.0.0-pre.3
+    - 4.0.0
+    - 4.0.1
     compatible:
     - 3.1.1
     recommended: 3.1.1
@@ -3872,7 +3925,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 638234725240000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.2d.tilemap.extras@3.1/manual/index.html
   hasRepository: 1
   repository:
@@ -3902,13 +3955,17 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 2D
-  type: 
+  type: asset
   description: 2D Aseprite Importer is a package which enables the import of .aseprite
     files from the Pixel Art tool Aseprite.
   status: 0
   errors: []
   versions:
     all:
+    - 1.0.0-pre.1
+    - 1.0.0-pre.2
+    - 1.0.0-pre.3
+    - 1.0.0-pre.4
     - 1.0.0
     compatible:
     - 1.0.0
@@ -3958,7 +4015,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 638203510100000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.2d.aseprite@1.0/manual/index.html
   hasRepository: 1
   repository:
@@ -4042,6 +4099,8 @@ m_ResolvedPackages:
     - 8.0.1
     - 9.0.0-pre.1
     - 9.0.0-pre.2
+    - 9.0.0
+    - 9.0.1
     compatible:
     - 8.0.1
     recommended: 8.0.1
@@ -4140,8 +4199,10 @@ m_ResolvedPackages:
     - 1.2.4
     - 1.2.5
     - 1.2.6
+    - 1.3.1
     compatible:
     - 1.2.6
+    - 1.3.1
     recommended: 1.2.6
     deprecated: []
   dependencies: []
@@ -4243,16 +4304,28 @@ m_ResolvedPackages:
     - 1.2.4
     - 1.3.1
     - 1.4.0
+    - 1.5.1
     - 2.1.0-exp.4
     - 2.1.0-pre.2
     - 2.1.0-pre.6
+    - 2.1.0-pre.11
+    - 2.1.0-pre.18
+    - 2.1.1
+    - 2.1.4
+    - 2.2.0
     compatible:
     - 1.2.4
     - 1.3.1
     - 1.4.0
+    - 1.5.1
     - 2.1.0-exp.4
     - 2.1.0-pre.2
     - 2.1.0-pre.6
+    - 2.1.0-pre.11
+    - 2.1.0-pre.18
+    - 2.1.1
+    - 2.1.4
+    - 2.2.0
     recommended: 1.2.4
     deprecated: []
   dependencies:
@@ -4317,7 +4390,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: assets
   description: Burst is a compiler that translates from IL/.NET bytecode to highly
     optimized native code using LLVM.
   status: 0
@@ -4444,6 +4517,7 @@ m_ResolvedPackages:
     - 1.8.1
     - 1.8.2
     - 1.8.3
+    - 1.8.4
     - 1.8.7
     compatible:
     - 1.8.7
@@ -4466,7 +4540,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 638221796120000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.burst@1.8/manual/index.html
   hasRepository: 1
   repository:
