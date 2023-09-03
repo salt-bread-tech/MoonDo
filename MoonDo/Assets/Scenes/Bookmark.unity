@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 19110852}
   - component: {fileID: 19110851}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: "\uC815\uB82Ctext"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 885240864}
   - component: {fileID: 885240863}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Button2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,7 +1101,7 @@ GameObject:
   - component: {fileID: 1014902177}
   - component: {fileID: 1014902176}
   m_Layer: 5
-  m_Name: Image
+  m_Name: "\uC815\uB82C\uC120\uD0DD"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1177,7 +1177,7 @@ GameObject:
   - component: {fileID: 1526844543}
   - component: {fileID: 1526844542}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Button3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1296,7 +1296,7 @@ GameObject:
   - component: {fileID: 1685855402}
   - component: {fileID: 1685855401}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: "\uC800\uC7A5 Title"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1431,7 +1431,7 @@ GameObject:
   - component: {fileID: 1764681433}
   - component: {fileID: 1764681432}
   m_Layer: 5
-  m_Name: HomeMain
+  m_Name: "\uC800\uC7A5\uB41C \uD56D\uBAA9"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1659,7 +1659,7 @@ GameObject:
   - component: {fileID: 2040298953}
   - component: {fileID: 2040298952}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Button1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
