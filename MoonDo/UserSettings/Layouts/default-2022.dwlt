@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 246
     height: 644
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 94
+  controlID: 16
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 306
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 38
+  controlID: 17
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 39
+  controlID: 18
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -331,28 +331,28 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes
   m_LastFoldersGridSize: 96
-  m_LastProjectPath: D:\git\MoonDo\MoonDo
+  m_LastProjectPath: C:\Users\ok\Documents\GitHub\MoonDo\MoonDo
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 130}
-    m_SelectedIDs: 62600000
-    m_LastClickedID: 24674
-    m_ExpandedIDs: 00000000666000006a60000076600000aa6000004067000000ca9a3b
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 92630000
+    m_LastClickedID: 25490
+    m_ExpandedIDs: 0000000066630000686300006a6300006c6300006e63000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: SignUp
-      m_OriginalName: SignUp
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 24710
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -366,7 +366,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000666000006a60000076600000aa60000040670000
+    m_ExpandedIDs: 0000000066630000686300006a6300006c6300006e630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -506,9 +506,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: ae630000
       m_LastClickedID: 0
-      m_ExpandedIDs: 489dffffac9dffff029effff509effffc89effffbea1ffffb6a2ffff98c9ffff9ac9ffff9ec9ffffe6cfffffeccfffff62d5ffffaed5ffff08ddfffff4e0ffff42e1ffff1ee3ffff12e6ffff6ae6ffffc6e6ffff1ee7ffff6ae7ffffd0e7ffff20e8ffff68e8ffffb6e8ffff02e9ffff1aebffff8aecffff5c670000966e0000a86e00003c6f00007c70000086710000d6710000fc7100000c7200004a73000024800000
+      m_ExpandedIDs: 94f9ffff0cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -901,9 +901,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 780.3593, y: 1819.7776, z: 4.7043}
+    m_Target: {x: 329.04858, y: 1305.8723, z: -9.940658}
     speed: 2
-    m_Value: {x: 766.4618, y: 1831.477, z: 5.127607}
+    m_Value: {x: 329.04858, y: 1305.8723, z: -9.940658}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -953,9 +953,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 983.0126
+    m_Target: 1399.2755
     speed: 2
-    m_Value: 940.6819
+    m_Value: 1399.2755
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1058,18 +1058,18 @@ MonoBehaviour:
       y: 21
       width: 1366
       height: 602
-    m_Scale: {x: 0.30868733, y: 0.30868733}
-    m_Translation: {x: 683.00006, y: 301}
+    m_Scale: {x: 0.23775671, y: 0.23775671}
+    m_Translation: {x: 683, y: 301}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -2212.595
-      y: -975.09674
-      width: 4425.19
-      height: 1950.1935
+      x: -2872.6843
+      y: -1266
+      width: 5745.3687
+      height: 2532
     m_MinimalGUI: 1
   m_defaultScale: 0.23775671
   m_LastWindowPixelSize: {x: 1366, y: 623}
