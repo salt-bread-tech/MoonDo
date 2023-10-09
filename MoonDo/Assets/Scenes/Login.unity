@@ -2154,6 +2154,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544929393}
   m_CullTransparentMesh: 1
+--- !u!1 &1633111521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1633111523}
+  - component: {fileID: 1633111522}
+  m_Layer: 0
+  m_Name: LoginController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1633111522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633111521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33033e272482d4f4ba134bf023921b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userIdText: {fileID: 1028953352}
+  userPasswordText: {fileID: 1283613936}
+--- !u!4 &1633111523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633111521}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 554.3188, y: 1603.3824, z: -9.922171}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1647196345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,8 +2469,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 516191486}
-        m_TargetAssemblyTypeName: ChangeScenes, Assembly-CSharp
+      - m_Target: {fileID: 1633111522}
+        m_TargetAssemblyTypeName: LoginController, Assembly-CSharp
         m_MethodName: LoginToHome
         m_Mode: 1
         m_Arguments:
@@ -3154,3 +3200,4 @@ SceneRoots:
   - {fileID: 2126503407}
   - {fileID: 1934226682}
   - {fileID: 516191487}
+  - {fileID: 1633111523}
