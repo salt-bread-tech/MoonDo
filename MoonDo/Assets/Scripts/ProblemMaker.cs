@@ -23,6 +23,7 @@ public class ProblemMaker : MonoBehaviour
     public Slider difficultySlider;
 
     private int userId;
+    private int problemPaperId;
 
     public void ProblemMakerToProblemPaper()
     {
@@ -46,9 +47,10 @@ public class ProblemMaker : MonoBehaviour
     IEnumerator UnityWebRequestPost()
     {
 
-        string url = "http://localhost:8080/problem/creation";
+        string url = "http://121.163.89.235:8080/problem/creation";
+
         //입력값 JSON형식으로 저장
-        string jsonData = "{\"userId\":\""+ userId + "\",\"title\":\"" + fieldText.text + "\",\"field\":\"" + fieldText.text + "\",\"detailedField\":\"" + detailedFieldText.text +
+        string jsonData = "{\"userId\":\"" + userId + "\",\"title\":\"" + fieldText.text + "\",\"field\":\"" + fieldText.text + "\",\"detailedField\":\"" + detailedFieldText.text +
             "\",\"category\":\"" + categoryText.text + "\",\"count\":" + countText.text + ",\"difficulty\":" + difficultySlider.value + "}";
 
         UnityWebRequest www = new UnityWebRequest(url, "POST");
@@ -63,12 +65,14 @@ public class ProblemMaker : MonoBehaviour
         {
             Debug.Log("서버 응답: " + www.downloadHandler.text);
 
-            // 서버 응답 CreateProblemResponse로 파싱
+            // 서버 응답 파싱
             var responseData = JsonUtility.FromJson<CreateProblemResponse>(www.downloadHandler.text);
 
             if (responseData != null)
             {
-                int problemPaperId = responseData.problemPaperId;
+                problemPaperId = responseData.problemPaperId;
+                PlayerPrefs.SetInt("ProblemPaperId", problemPaperId);
+                PlayerPrefs.Save();
                 Debug.Log("문제 만들기 성공, 문제지 ID: " + problemPaperId);
                 SceneManager.LoadScene("ProblemPaper");
             }
@@ -83,4 +87,3 @@ public class ProblemMaker : MonoBehaviour
         }
     }
 }
-

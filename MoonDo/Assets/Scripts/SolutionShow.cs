@@ -1,51 +1,80 @@
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using UnityEngine;
-using UnityEngine.Networking;
-using UnityEngine.UI;
+
+public class ResponseSolution
+{
+    public List<string> getSolutionResponses;
+}
 
 public class SolutionShow : MonoBehaviour
 {
     public Text solutionText;
-    public int problemPaperId;
+    int problemPaperId;
 
+    public void SolutionPaperShow()
+    {
+        StartCoroutine(UnityWebRequestPost());
+    }
     private void Start()
     {
-        StartCoroutine(LoadSolutionData());
+        Debug.Log("ProblemPaperId : " + problemPaperId);
+        /*
+        problemPaperId = PlayerPrefs.GetInt("ProblemPaperId", -1);
+        if(problemPaperId != -1)
+        {
+            Debug.Log("ProblemPaperId : " + problemPaperId);
+        }
+        else
+        {
+            Debug.Log("ProblemPaperId를 찾을 수 없음");
+        }
+        */
+        SolutionPaperShow();
     }
 
-    IEnumerator LoadSolutionData()
+    IEnumerator UnityWebRequestPost()
     {
-        string url = "http:/localhost:8080/problem/solution";
-        string jsonData = problemPaperId.ToString();
-
-        UnityWebRequest www = new UnityWebRequest(url, "POST");
-        byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
-        www.uploadHandler = new UploadHandlerRaw(bodyRaw);
-        www.downloadHandler = new DownloadHandlerBuffer();
-        www.SetRequestHeader("Content-Type", "application/json");
-
-        yield return www.SendWebRequest();
-
-        if (www.error == null)
+        string url = "http://121.163.89.235:8080/problem/solution";
+        if (problemPaperId != -1)
         {
-            string responseJson = www.downloadHandler.text;
-            List<string> solutions = JsonUtility.FromJson<List<string>>(responseJson);
+            UnityWebRequest request = new UnityWebRequest(url, "POST");
+            CreateProblemResponse requestData = new CreateProblemResponse();
+            requestData.problemPaperId = 97; // 저장된 값을 사용
+            string jsonData = JsonUtility.ToJson(requestData);
+            byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
+            request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
+            request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+            request.SetRequestHeader("Content-Type", "application/json");
 
-            if (solutions != null)
+            yield return request.SendWebRequest();
+
+            if (request.error == null)
             {
-                string combinedSolutionText = string.Join("\n", solutions);
-                solutionText.text = combinedSolutionText;
+                var jsonResponse = request.downloadHandler.text;
+                // ResponseObject responseData = JsonUtility.FromJson<ResponseObject>(jsonResponse);
+                // Debug.Log("responseData: " + responseData);
+
+                if (jsonResponse != null)
+                {
+                    solutionText.text = jsonResponse;
+                }
+                else
+                {
+                    Debug.Log("Invalid or missing response data");
+                }
             }
             else
             {
-                solutionText.text = "해설지를 찾을 수 없음.";
+                Debug.LogError("Error: " + request.error);
             }
         }
         else
         {
-            Debug.LogError("서버 요청 실패: " + www.error);
+            Debug.LogError("ProblemPaperId를 찾을 수 없음");
         }
     }
 }
