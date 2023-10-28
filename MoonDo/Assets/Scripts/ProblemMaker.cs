@@ -47,7 +47,7 @@ public class ProblemMaker : MonoBehaviour
     IEnumerator UnityWebRequestPost()
     {
 
-        string url = "http://121.163.89.235:8080/problem/creation";
+        string url = "http://localhost:8080/problem/creation";
 
         //입력값 JSON형식으로 저장
         string jsonData = "{\"userId\":\"" + userId + "\",\"title\":\"" + fieldText.text + "\",\"field\":\"" + fieldText.text + "\",\"detailedField\":\"" + detailedFieldText.text +

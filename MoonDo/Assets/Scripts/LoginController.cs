@@ -26,7 +26,7 @@ public class LoginController : MonoBehaviour
 
     IEnumerator UnityWebRequestPost()
     {
-        string url = "http://121.163.89.235:8080/user/login";
+        string url = "http://localhost:8080/user/login";
         //입력한 id, 비밀번호 JSON 형식으로 저장
         string jsonData = "{\"email\":\"" + userIdText.text + "\",\"password\":\"" + userPasswordText.text + "\"}";
 

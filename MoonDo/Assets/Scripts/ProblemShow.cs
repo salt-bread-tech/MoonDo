@@ -4,17 +4,20 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
+using System;
 
 [System.Serializable]
 public class ResponseObject
 {
-    public List<string> getProblemResponses;
+    public string[] getProblemResponses;
 }
 
 public class ProblemShow : MonoBehaviour
 {
     public Text problemText; // UI Text 요소에 대한 참조
     int problemPaperId;
+    private object jsonArray;
 
     public void ProblemPaperShow()
     {
@@ -39,13 +42,13 @@ public class ProblemShow : MonoBehaviour
 
     IEnumerator UnityWebRequestPost()
     {
-        string url = "http://121.163.89.235:8080/problem/all";
+        string url = "http://localhost:8080/problem/all";
         Debug.Log("웹리퀘스트 시작");
         if (problemPaperId != -1)
         {
             UnityWebRequest request = new UnityWebRequest(url, "POST");
             CreateProblemResponse requestData = new CreateProblemResponse();
-            requestData.problemPaperId = 97; // 저장된 값을 사용
+            requestData.problemPaperId = PlayerPrefs.GetInt("ProblemPaperId", -1); ; // 저장된 값을 사용
             string jsonData = JsonUtility.ToJson(requestData);
             byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
             request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
@@ -56,15 +59,34 @@ public class ProblemShow : MonoBehaviour
 
             if (request.error == null)
             {
-                var jsonResponse = request.downloadHandler.text;
+                string jsonResponse = request.downloadHandler.text;
+                Debug.Log("JSON Response: " + jsonResponse);
 
-                if (jsonResponse != null)
+                if (!string.IsNullOrEmpty(jsonResponse))
                 {
-                    problemText.text = jsonResponse;
+                    // 정규 표현식을 사용하여 "문제 X: "를 제거
+                    jsonResponse = Regex.Replace(jsonResponse, @"(^\[|\]$|\\)", "");
+                    jsonResponse = jsonResponse.Replace("?", "?\n");
+                    jsonResponse = jsonResponse.Replace("문제", "\n문제");
+
+
+                    ResponseObject responseData = new ResponseObject();
+                    responseData.getProblemResponses = jsonResponse.Split(new char[] { '\"', ',' }, System.StringSplitOptions.RemoveEmptyEntries);
+
+                    if (responseData != null && responseData.getProblemResponses != null)
+                    {
+                        // 문자열 목록을 개행 문자로 연결하여 Text UI에 설정
+                        string resultText = string.Join("\n", responseData.getProblemResponses);
+                        problemText.text = resultText;
+                    }
+                    else
+                    {
+                        Debug.Log("Invalid or missing response data");
+                    }
                 }
                 else
                 {
-                    Debug.Log("Invalid or missing response data");
+                    Debug.Log("Empty response data");
                 }
             }
             else
