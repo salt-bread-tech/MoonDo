@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Text;
 
 [System.Serializable]
 public class UserInfoResponse
@@ -43,26 +44,36 @@ public class ProfileController : MonoBehaviour
             yield break;
         }
 
-        string url = "http://localhost:8080/user/info?id=" + userId;
+        string url = "http://localhost:8080/user/info";
 
-        UnityWebRequest www = UnityWebRequest.Get(url);
+        string jsonData = "{\"userId\":" + userId + "}";
+
+        UnityWebRequest www = new UnityWebRequest(url, "POST");
+        byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
+        www.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        www.downloadHandler = new DownloadHandlerBuffer();
+        www.SetRequestHeader("Content-Type", "application/json");
+
         yield return www.SendWebRequest();
-
 
         if (www.error == null)
         {
+            Debug.Log("서버 응답: " + www.downloadHandler.text);
+            var responseData = JsonUtility.FromJson<UserInfoResponse>(www.downloadHandler.text);
 
-            string jsonResponse = www.downloadHandler.text;
-            var responseData = JsonUtility.FromJson<UserInfoResponse>(jsonResponse);
-            Debug.Log(www.downloadHandler.text);
+            if (responseData != null)
+            {
+                string userName = responseData.userName;
+                string introduction = responseData.introduction;
+                Debug.Log("아이디 " + userName + " 소개 " + introduction);
+                userNameText.text = userName;
+                introductionText.text = introduction;
+            }
+            else
+            {
+                Debug.LogError("오류");
+            }
 
-            userNameText.text = "아이디: " + responseData.userName;
-            introductionText.text = "소개: " + responseData.introduction;
-        }
-        else
-        {
-            Debug.Log("Error" + www.error);
         }
     }
 }
-
