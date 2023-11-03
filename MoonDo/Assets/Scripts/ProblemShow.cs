@@ -15,7 +15,7 @@ public class ResponseObject
 
 public class ProblemShow : MonoBehaviour
 {
-    public Text problemText; // UI Text ¿ä¼Ò¿¡ ´ëÇÑ ÂüÁ¶
+    public TMPro.TextMeshProUGUI problemText; // UI Text ï¿½ï¿½Ò¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     int problemPaperId;
     private object jsonArray;
 
@@ -34,7 +34,7 @@ public class ProblemShow : MonoBehaviour
         }
         else
         {
-            Debug.Log("ProblemPaperId¸¦ Ã£À» ¼ö ¾øÀ½");
+            Debug.Log("ProblemPaperIdï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
         }
         */
         ProblemPaperShow();
@@ -43,12 +43,12 @@ public class ProblemShow : MonoBehaviour
     IEnumerator UnityWebRequestPost()
     {
         string url = "http://localhost:8080/problem/all";
-        Debug.Log("À¥¸®Äù½ºÆ® ½ÃÀÛ");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½");
         if (problemPaperId != -1)
         {
             UnityWebRequest request = new UnityWebRequest(url, "POST");
             CreateProblemResponse requestData = new CreateProblemResponse();
-            requestData.problemPaperId = PlayerPrefs.GetInt("ProblemPaperId", -1); ; // ÀúÀåµÈ °ªÀ» »ç¿ë
+            requestData.problemPaperId = PlayerPrefs.GetInt("ProblemPaperId", -1); ; // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             string jsonData = JsonUtility.ToJson(requestData);
             byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
             request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
@@ -64,10 +64,10 @@ public class ProblemShow : MonoBehaviour
 
                 if (!string.IsNullOrEmpty(jsonResponse))
                 {
-                    // Á¤±Ô Ç¥Çö½ÄÀ» »ç¿ëÇÏ¿© "¹®Á¦ X: "¸¦ Á¦°Å
+                    // ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ "ï¿½ï¿½ï¿½ï¿½ X: "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                     jsonResponse = Regex.Replace(jsonResponse, @"(^\[|\]$|\\)", "");
                     jsonResponse = jsonResponse.Replace("?", "?\n");
-                    jsonResponse = jsonResponse.Replace("¹®Á¦", "\n¹®Á¦");
+                    jsonResponse = jsonResponse.Replace("ï¿½ï¿½ï¿½ï¿½", "\nï¿½ï¿½ï¿½ï¿½");
 
 
                     ResponseObject responseData = new ResponseObject();
@@ -75,7 +75,7 @@ public class ProblemShow : MonoBehaviour
 
                     if (responseData != null && responseData.getProblemResponses != null)
                     {
-                        // ¹®ÀÚ¿­ ¸ñ·ÏÀ» °³Çà ¹®ÀÚ·Î ¿¬°áÇÏ¿© Text UI¿¡ ¼³Á¤
+                        // ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ Text UIï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                         string resultText = string.Join("\n", responseData.getProblemResponses);
                         problemText.text = resultText;
                     }
@@ -96,7 +96,7 @@ public class ProblemShow : MonoBehaviour
         }
         else
         {
-            Debug.LogError("ProblemPaperId¸¦ Ã£À» ¼ö ¾øÀ½");
+            Debug.LogError("ProblemPaperIdï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
         }
     }
 }

@@ -9,15 +9,15 @@ using System.Text;
 [System.Serializable]
 public class LoginResponse
 {
-    public string code; //로그인 응답 코드
+    public string code;
     public int userId;
 }
 
 
 public class LoginController : MonoBehaviour
 {
-    public TMP_InputField userIdText; //ID 입력
-    public TMP_InputField userPasswordText; //Password 입력
+    public TMP_InputField userIdText; 
+    public TMP_InputField userPasswordText; 
 
     public void LoginToHome()
     {
@@ -27,10 +27,8 @@ public class LoginController : MonoBehaviour
     IEnumerator UnityWebRequestPost()
     {
         string url = "http://localhost:8080/user/login";
-        //입력한 id, 비밀번호 JSON 형식으로 저장
         string jsonData = "{\"email\":\"" + userIdText.text + "\",\"password\":\"" + userPasswordText.text + "\"}";
 
-        //post 요청
         UnityWebRequest www = new UnityWebRequest(url, "POST");
         byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
         www.uploadHandler = new UploadHandlerRaw(bodyRaw);
@@ -43,12 +41,11 @@ public class LoginController : MonoBehaviour
         {
             string jsonResponse = www.downloadHandler.text;
 
-            // 서버 응답 LoginResponse로 파싱
             LoginResponse response = JsonUtility.FromJson<LoginResponse>(jsonResponse);
 
             if (response.code == "1") 
             {
-                PlayerPrefs.SetInt("UserId", response.userId); // UserId PlayerPrefs에 저장
+                PlayerPrefs.SetInt("UserId", response.userId);
                 SceneManager.LoadSceneAsync("Home");
                 Debug.Log("로그인 성공, userID :" + response.userId);
             }
